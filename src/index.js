@@ -1,14 +1,14 @@
 import app from './app.js';
 import { sequelize } from './database/database.js';
-import './models/autor.js';
-import './models/libro.js';
-import './models/prestamo.js';
-import './models/usuario.js';
+// import './models/autor.js';
+// import './models/libro.js';
+// import './models/prestamo.js';
+// import './models/usuario.js';
 
 async function main() {
     try
     {
-    await sequelize.sync({ alter: true });
+    await sequelize.sync({ force: false });
     app.listen(3000);
     console.log('Server on port 3000');}
     catch (error) {
